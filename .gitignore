@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### logback-spring provide ###
+app.log

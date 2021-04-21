@@ -23,9 +23,15 @@
         </dependency>
 
 <!--        thymeleaf模板引擎配置-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+<!--        </dependency>-->
+<!--        pebble view先用该引擎代替前者-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <groupId>io.pebbletemplates</groupId>
+            <artifactId>pebble-spring-boot-starter</artifactId>
+            <version>3.1.5</version>
         </dependency>
 <!--        web依赖-->
         <dependency>
