@@ -32,6 +32,11 @@ public class UserController {
 
     @GetMapping("/")
     public ModelAndView index(HttpSession session) throws Exception{
-        return new ModelAndView("index.html");
+        return new ModelAndView("redirect:/login");
+    }
+
+    @GetMapping("/login")
+    public ModelAndView login(HttpSession session) throws Exception{
+        return new ModelAndView("login.html");
     }
 }
