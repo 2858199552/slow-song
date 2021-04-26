@@ -1,40 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>login</title>
+{% extends "baseLogin.html" %}
 
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+{% block title %}Sign In{% endblock %}
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        .bgc{
-            background-image: url(static/asset/login.jpg);
-            background-size: cover;
-        }
-    </style>
-
+{% block headExtends %}
     <link href="/static/css/mycss/signin.css" rel="stylesheet">
-</head>
+{% endblock %}
 
-<body class="text-center bgc">
+{% block body %}
     <main class="form-signin">
         <form>
-<!--            <img class="mb-4" src="" alt="" width="72" height="57">-->
+            <img class="mb-4" src="/static/asset/chilli.png" alt="" width="48" height="48">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
@@ -52,8 +27,7 @@
                 </label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit" id="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">fuller&copy; 2017–2021</p>
+            {% include "footer.html" %}
         </form>
     </main>
-</body>
-</html>
+{% endblock %}

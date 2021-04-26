@@ -1,8 +1,36 @@
 {% extends "base.html" %}
 
-{% block title %} Home {% endblock %}
+{% block title %}Home{% endblock %}
+
+{% block headExtends %}
+<link href="/static/css/mycss/home.css">
+{% endblock %}
 
 {% block content %}
-    <h1> Home </h1>
-    <p> Welcome to my home page. My name is {{ name }}.</p>
+<div class="container">
+    <div class="row">
+        <span class="border frameDesignTop">
+            <h3>This is A title</h3>
+            <p>test show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run change</p>
+        </span>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="frameDesignLeft">
+            <span class="border">
+                <h3>This is A title</h3>
+                <p>test show and run chest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeange</p>
+            </span>
+            </div>
+        </div>
+        <div class="col">
+            <div class="frameDesignRight">
+            <span class="border">
+                <h3>This is A title</h3>
+                <p>test show and run chest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changeest show and run changenge</p>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
