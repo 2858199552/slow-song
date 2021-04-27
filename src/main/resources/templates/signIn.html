@@ -3,31 +3,38 @@
 {% block title %}Sign In{% endblock %}
 
 {% block headExtends %}
-    <link href="/static/css/mycss/signin.css" rel="stylesheet">
+<link href="/static/css/mycss/signin.css" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
-    <main class="form-signin">
-        <form>
-            <img class="mb-4" src="/static/asset/chilli.png" alt="" width="48" height="48">
-            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+<main class="form-signin">
+    <form method="post" action="/signIn">
+        <img class="mb-4" src="/static/asset/chilli.png" alt="" width="48" height="48">
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+        {% if error != null %}
+        <div class="form-group">
+            <p id="error" class="text-danger">{{ error }}</p>
+        </div>
+        {% endif %}
 
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div>
+        <div class="form-floating">
+            <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="{{ email }}">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit" id="submit">Sign in</button>
-            {% include "footer.html" %}
-        </form>
-    </main>
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" id="submit">Sign in</button>
+
+        <a href="/register">Don't have an account?</a>
+        {% include "footer.html" %}
+    </form>
+</main>
 {% endblock %}

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Base{% endblock %}</title>
+    <link href="/static/asset/chilli.ico" rel="icon">
+    <link href="/static/asset/chilli.ico" rel="bookmark">
 
     <link href="/static/css/mycss/navbar-top.css" rel="stylesheet">
 
@@ -44,7 +46,7 @@
                     <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">World</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -58,6 +60,7 @@
                                 <img src="/static/asset/chilli.png">
                                 <a>{{ user.name }}</a>
                             </span>
+                            <a class="dropdown-item" href="#">Trends</a>
                             <a class="dropdown-item" href="/signOut">Sign Out</a>
                         {% endif %}
                         <div class="dropdown-divider"></div>
@@ -65,7 +68,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">VIP</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">

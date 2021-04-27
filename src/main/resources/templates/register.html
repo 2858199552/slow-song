@@ -1,0 +1,44 @@
+{% extends "baseLogin.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block headExtends %}
+<link href="/static/css/mycss/signin.css" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<main class="form-signin">
+    <form method="post" action="/register">
+        <img class="mb-4" src="/static/asset/chilli.png" alt="" width="48" height="48">
+        <h1 class="h3 mb-3 fw-normal">Please register</h1>
+        {% if error != null %}
+        <div class="form-group">
+            <p id="error" class="text-danger">{{ error }}</p>
+        </div>
+        {% endif %}
+
+        <div class="form-floating">
+            <input name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="{{ email }}">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" minlength="6" maxlength="20">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating">
+            <input name="name" type="text" class="form-control" id="floatingName" placeholder="Name" minlength="1" maxlength="50">
+            <label for="floatingName">Name</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="relevant-terms"> Agree to relevant terms and conditions
+            </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" id="submit">Register</button>
+
+        <a href="/signIn">Already have an account?</a>
+        {% include "footer.html" %}
+    </form>
+</main>
+{% endblock %}

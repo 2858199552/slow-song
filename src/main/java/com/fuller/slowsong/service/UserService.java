@@ -85,4 +85,11 @@ public class UserService {
     public List<User> getUsers(){
         return jdbcTemplate.query("SELECT * FROM users", userRowMapper);
     }
+
+    //region 功能性方法
+    public List<User> getFollows(long id){
+//        return jdbcTemplate.query("SELECT relations_r.follow_id FROM users user_l INNER JOIN user_relations relations_r ON user_l.id = relations_r.user_id", userRowMapper);
+        return jdbcTemplate.query("SELECT * FROM users u WHERE u.id = r.follow_id FROM user_relations r WHERE r.user_id = ?", new Object[]{id}, userRowMapper);
+    }
+    //endregion
 }
