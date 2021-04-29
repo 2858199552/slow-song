@@ -36,7 +36,7 @@ public class DatabaseInitializer {
                 "initiator_id BIGINT NOT NULL, " +
                 "post_title TINYTEXT NOT NULL, " +
                 "post_content TEXT NOT NULL, " +
-                "post_createdAt BITINT NOT NULL )");
+                "post_createdAt BIGINT NOT NULL )");
 
 //        5.创建帖子评论表
         jdbcTemplate.update("CREATE TABLE IF NOT EXISTS post_backs(" +
@@ -46,7 +46,6 @@ public class DatabaseInitializer {
                 "target_user_id BIGINT, " + // 当为空时说明是对帖子本身回复
                 "back_content TEXT NOT NULL, " +
                 "back_createdAt BIGINT NOT NULL, " +
-                "FOREIGN KEY(target_post_id) REFERENCES forum_posts(post_id)), " +
-                "FOREIGN KEY(target_user_id) REFERENCES users(id)");
+                "FOREIGN KEY(target_post_id) REFERENCES forum_posts(post_id))");
     }
 }
